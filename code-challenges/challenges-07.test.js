@@ -20,7 +20,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) => {
   // Solution code here...
-  return arr.map(x=>x + 1);
+  return arr.map(value=>value + 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
-  const newArray = arr.map(num => num+'?');
+  const newArray = arr.map(string => string+'?');
   return newArray;
 };
 
