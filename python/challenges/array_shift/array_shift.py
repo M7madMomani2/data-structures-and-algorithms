@@ -16,3 +16,19 @@ def insertShiftArray(arr,val):
         return(arr[:(arrLength//2)] + [val] + arr[(arrLength//2):])
     else:
         return(arr[:arrLength//2+1] + [val] + arr[arrLength//2+1:])
+
+
+def removeShiftArray(arr):
+    arrLength=len(arr)
+    if not arrLength%2:
+        return(arr[:(arrLength//2)] + arr[(arrLength//2+1):])
+    else:
+        return(arr[:arrLength//2] + arr[arrLength//2+1:])
+
+
+hola=[1, 2, 3, 4, 5]
+print(f"before insert  {hola}")
+hola =removeShiftArray(hola)
+print(f"after remove  {hola}")
+hola =insertShiftArray(hola, 10)
+print(f"after insert  {hola}")

@@ -16,3 +16,11 @@ def test_case():
     assert insertShiftArray(userinput1[0],userinput1[1]) == exOutput1 #Test Case1
     assert insertShiftArray(userinput2[0],userinput2[1]) == exOutput2 #Test Case2
 
+def test_case_remove():
+    userinput1=[1, 2, 3, 10, 4, 5]
+    userinput2=[1, 2, 3, 4, 5]
+    exOutput1 = [1, 2, 3, 4, 5]
+    exOutput2 = [1, 2, 4, 5]
+    assert removeShiftArray(userinput1) == exOutput1 #Test Case1
+    assert removeShiftArray(userinput2) == exOutput2 #Test Case2
+
