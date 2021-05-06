@@ -9,4 +9,5 @@ class LinkedList:
 
     def some_method(self):
         # method body here
+        # Solve problem
         pass
