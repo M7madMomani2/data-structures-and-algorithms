@@ -43,10 +43,9 @@ class Linkedlist:
 if __name__ == "__main__":
     l_list = Linkedlist()
     l_list.insert(2)
-    l_list.insert(2)
-    l_list.insert(2)
-    l_list.insert(2)
+    l_list.insert(3)
+    l_list.insert(0)
+    l_list.insert(1)
     print(l_list.includes(2))
     print(l_list.includes(0))
-    print(l_list.to_string())
     print(l_list.to_string())
