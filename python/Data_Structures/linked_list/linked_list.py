@@ -79,9 +79,6 @@ class Linkedlist:
                     break
                 current = current.next
 
-                if current.next == None:
-                    raise Exception("Sorry Couldn't Find The Value")
-
 
 
 

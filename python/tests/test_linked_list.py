@@ -1,4 +1,3 @@
-# from python.Data_Structures.linked_list.linked_list import Linkedlist
 from Data_Structures.linked_list.linked_list import *
 from Data_Structures.linked_list import *
 import pytest
