@@ -64,22 +64,24 @@ class Linkedlist:
                 current=current.next
 
 
-    def insertBefore(self, value, newVal):
-        newNode = Node(value)
-        if self.head is None:
-            self.head = newNode
+    def insertBefore(self,value, newVal):
+        new_node = Node(newVal)
+        current = self.head
+        if current.value == value:
+            new_node.next = current
+            self.head = new_node
         else:
-            current=self.head
-            if current.value == newVal:
-                newNode.next = self.head
-                self.head = newNode
-            else :
-                while current.next.value != newVal:
-                    current = current.next
-                if current.next.value == newVal:
-                    old = current.next
-                    current.next = newNode
-                    newNode.next = old
+            while current.next:
+
+                if current.next.value == value:
+                    new_node.next = current.next
+                    current.next = new_node
+                    break
+                current = current.next
+
+                if current.next == None:
+                    raise Exception("Sorry Couldn't Find The Value")
+
 
 
 
