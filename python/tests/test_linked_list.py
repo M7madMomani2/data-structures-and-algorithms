@@ -60,14 +60,5 @@ def linked_list_ob():
     linked_list_o.insert(2)
     linked_list_o.insert(3)
     linked_list_o.insert(0)
-
-    # linked_list_o.includes(15)
-    # linked_list_o.includes(8)
-    # linked_list_o.includes(10)
-
-    # linked_list_o.insertBefore(555, 6)
-    # linked_list_o.insertAfter(555, 6)
-
-    # linked_list_o.to_string()
     return linked_list_o
 
