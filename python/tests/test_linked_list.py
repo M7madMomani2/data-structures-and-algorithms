@@ -52,6 +52,19 @@ def test_insert_after(linked_list_ob):
     assert linked_list_ob.to_string() == f' { {0} } -> { {3} } -> { {333} } -> { {2} } -> { {1} } -> NULL'
 
 
+def test_kthFromEnd(linked_list_ob):
+    actual_output1 =linked_list_ob.kthFromEnd(3)
+    actual_output2=linked_list_ob.kthFromEnd(0)
+    actual_output3 =linked_list_ob.kthFromEnd(10)
+    expected_output1 = 0
+    expected_output2 = 1
+    expected_output3 = "Sorry invalid input"
+    assert actual_output1 == expected_output1
+    assert actual_output2 == expected_output2
+    assert actual_output3 == expected_output3
+
+
+
 @pytest.fixture
 def linked_list_ob():
     linked_list_o=Linkedlist()

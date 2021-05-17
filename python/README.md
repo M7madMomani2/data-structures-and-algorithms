@@ -74,3 +74,17 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 - **Run every possible test** - `pytest`
 - **Run filtered tests** - `pytest -k some_filter_text`
 - **Run in watch mode** - `ptw` or `pytest-watch`
+
+
+
+# Challenges
+
+| **Number** | **Name and Link** |
+|------------|-------------------|
+| *Challenge01* |[Reverse an Array](https://github.com/M7madMomani2/data-structures-and-algorithms/blob/main/python/challenges/array_reverse/array_reverse.py)|
+| *Challenge02* |[Array Shift](https://github.com/M7madMomani2/data-structures-and-algorithms/blob/main/python/challenges/array_shift/array_shift.py)|
+| *Challenge03* |[Array Binary Search](https://github.com/M7madMomani2/data-structures-and-algorithms/blob/main/python/challenges/array_binary_search/array_binary_search.py)|
+| *Challenge04* |[WhitBoard Exam](https://docs.google.com/spreadsheets/d/1EZw48Ar-R6t3fhduPeP6FngDMH41cjHfZ4n2fJsNANA/edit#gid=0)|
+| *Challenge05* |[Singly Linked List](https://github.com/M7madMomani2/data-structures-and-algorithms/blob/main/python/Data_Structures/linked_list/linked_list.py)|
+| *Challenge06* |[Linked list insertions](https://github.com/M7madMomani2/data-structures-and-algorithms/blob/main/python/Data_Structures/linked_list/linked_list.py)|
+| *Challenge07* |[Value From The End Of LL](https://github.com/M7madMomani2/data-structures-and-algorithms/blob/main/python/Data_Structures/linked_list/linked_list.py)|

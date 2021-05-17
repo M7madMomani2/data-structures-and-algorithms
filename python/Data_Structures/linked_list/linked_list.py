@@ -6,6 +6,7 @@ class Node:
 class Linkedlist:
     def __init__(self):
         self.head = None
+        self.length=0
 
     def insert(self, val):
         node = Node(val)
@@ -16,6 +17,7 @@ class Linkedlist:
         else:
             node.next = self.head
             self.head = node
+        self.length+=1
         return node.value
 
     def includes(self, value):
@@ -45,7 +47,9 @@ class Linkedlist:
         current = self.head
         while current.next :
             current=current.next
+        self.length+=1
         current.next =node
+
 
     def insertAfter(self ,value, newVal) :
         node=Node(newVal)
@@ -60,8 +64,11 @@ class Linkedlist:
                     current.next =node
                     print(current.next.value)
                     node.next=bef_val
+                    self.length+=1
                     return node.value
                 current=current.next
+
+
 
 
     def insertBefore(self,value, newVal):
@@ -76,9 +83,21 @@ class Linkedlist:
                 if current.next.value == value:
                     new_node.next = current.next
                     current.next = new_node
+                    self.length+=1
                     break
                 current = current.next
 
+    def kthFromEnd(self,k):
+        try:
+            if k > self.length-1 or k < 0:
+                raise Exception
+            else :
+                current= self.head
+                for i in range(self.length-k-1):
+                    current=current.next
+                return current.value
+        except Exception:
+            return ("Sorry invalid input")
 
 
 
@@ -91,8 +110,13 @@ if __name__ == "__main__":
     l_list.append(15)
     l_list.insertBefore(3, 7)
 
-    print(l_list.includes(2))
-    print(l_list.includes(0))
+    # print(l_list.includes(2))
+    # print(l_list.includes(0))
     print(l_list.to_string())
+    print(l_list.kthFromEnd(0))
 
+    print(l_list.kthFromEnd(5))
+    print(l_list.kthFromEnd(3))
+    print(l_list.kthFromEnd(4))
+    print(l_list.kthFromEnd(10))
 
