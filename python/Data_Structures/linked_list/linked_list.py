@@ -99,24 +99,56 @@ class Linkedlist:
         except Exception:
             return ("Sorry invalid input")
 
+    def kthFromFirst(self,k):
+        try:
+            if k > self.length-1 or k < 0:
+                raise Exception
+            else :
+                current= self.head
+                for i in range(k):
+                    current=current.next
+                return current.value
+        except Exception:
+            return ("Sorry invalid input")
+
+
+    def zipLists(self, ll2):
+        new_ll=Linkedlist()
+        if self.length==ll2.length:
+            for i in range(self.length):
+                new_ll.insert(self.kthFromFirst(i))
+                new_ll.insert(ll2.kthFromFirst(i))
+            print(new_ll.to_string())
+            return new_ll
+        else:
+            return "Sorry invalid input"
+
+
 
 
 if __name__ == "__main__":
     l_list = Linkedlist()
-    l_list.insert(2)
     l_list.insert(3)
-    l_list.insert(0)
+    l_list.insert(2)
     l_list.insert(1)
-    l_list.append(15)
-    l_list.insertBefore(3, 7)
+    l_list.insert(0)
 
     # print(l_list.includes(2))
     # print(l_list.includes(0))
+    # print(l_list.to_string())
+    # print(l_list.kthFromEnd(0))
+
+    # print(l_list.kthFromEnd(5))
+    # print(l_list.kthFromEnd(3))
+    # print(l_list.kthFromEnd(4))
+    # print(l_list.kthFromEnd(10))
+
+
+    l_list2 = Linkedlist()
+    l_list2.insert(0)
+    l_list2.insert(1)
+    l_list2.insert(2)
+    l_list2.insert(3)
     print(l_list.to_string())
-    print(l_list.kthFromEnd(0))
-
-    print(l_list.kthFromEnd(5))
-    print(l_list.kthFromEnd(3))
-    print(l_list.kthFromEnd(4))
-    print(l_list.kthFromEnd(10))
-
+    print(l_list2.to_string())
+    l_list.zipLists(l_list2)
