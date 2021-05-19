@@ -26,4 +26,4 @@ Linked-List Class is the main class it has 3 main methods:
 > - include: It iterate over the linked list to look for a specific value, then return a logical value.
 
 ## Solution
-[Singly Linked List](https://....miro.com/app/board/o9J_lG44R2c=/)
+[Singly Linked List](https://miro.com/app/board/o9J_lG44R2c=/)
