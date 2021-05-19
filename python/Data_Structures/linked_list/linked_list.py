@@ -45,10 +45,13 @@ class Linkedlist:
     def append(self,value):
         node = Node(value)
         current = self.head
-        while current.next :
-            current=current.next
-        self.length+=1
-        current.next =node
+        if current :
+            while current.next :
+                current=current.next
+            self.length+=1
+            current.next =node
+        else:
+            self.insert(value)
 
 
     def insertAfter(self ,value, newVal) :
@@ -97,27 +100,36 @@ class Linkedlist:
                     current=current.next
                 return current.value
         except Exception:
-            return ("Sorry invalid input")
+            return False
 
     def kthFromFirst(self,k):
         try:
             if k > self.length-1 or k < 0:
-                raise Exception
+                return False
             else :
                 current= self.head
                 for i in range(k):
                     current=current.next
                 return current.value
         except Exception:
-            return ("Sorry invalid input")
+            return False
 
 
     def zipLists(self, ll2):
         new_ll=Linkedlist()
-        if self.length==ll2.length:
-            for i in range(self.length):
-                new_ll.insert(self.kthFromFirst(i))
-                new_ll.insert(ll2.kthFromFirst(i))
+        max_len=max(self.length,ll2.length)
+        ll1_curent=self.head
+        ll2_curent=ll2.head
+        if self.length or ll2.length:
+            for i in range(max_len):
+                if ll1_curent:
+                    print(ll1_curent)
+                    new_ll.append(ll1_curent.value)
+                    ll1_curent=ll1_curent.next
+                if ll2_curent:
+                    print(ll2_curent)
+                    new_ll.append(ll2_curent.value)
+                    ll2_curent=ll2_curent.next
             print(new_ll.to_string())
             return new_ll
         else:
@@ -128,10 +140,12 @@ class Linkedlist:
 
 if __name__ == "__main__":
     l_list = Linkedlist()
-    l_list.insert(3)
     l_list.insert(2)
-    l_list.insert(1)
-    l_list.insert(0)
+    l_list.insert(2)
+    l_list.insert(2)
+    l_list.insert(2)
+    l_list.insert(2)
+    l_list.insert(2)
 
     # print(l_list.includes(2))
     # print(l_list.includes(0))
@@ -145,10 +159,11 @@ if __name__ == "__main__":
 
 
     l_list2 = Linkedlist()
-    l_list2.insert(0)
     l_list2.insert(1)
-    l_list2.insert(2)
-    l_list2.insert(3)
+    l_list2.insert(1)
+    l_list2.insert(1)
+    l_list2.insert(1)
     print(l_list.to_string())
     print(l_list2.to_string())
-    l_list.zipLists(l_list2)
+    l3=l_list.zipLists(l_list2)
+    # print(l3.to_string)

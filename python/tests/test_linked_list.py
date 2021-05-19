@@ -58,33 +58,20 @@ def test_kthFromEnd(linked_list_ob):
     actual_output3 =linked_list_ob.kthFromEnd(10)
     expected_output1 = 0
     expected_output2 = 1
-    expected_output3 = "Sorry invalid input"
+    expected_output3 = False
     assert actual_output1 == expected_output1
     assert actual_output2 == expected_output2
     assert actual_output3 == expected_output3
 
-def test_kthFromEnd(linked_list_ob):
-    actual_output1 =linked_list_ob.kthFromEnd(3)
-    actual_output2=linked_list_ob.kthFromEnd(0)
-    actual_output3 =linked_list_ob.kthFromEnd(10)
-    expected_output1 = 0
-    expected_output2 = 1
-    expected_output3 = "Sorry invalid input"
-    assert actual_output1 == expected_output1
-    assert actual_output2 == expected_output2
-    assert actual_output3 == expected_output3
 
 def test_zipLists(linked_list_ob,linked_list_ob2):
-    """
-    this function will take tow list and return new one that contain all element from list 1 and list 2
-    by order one node from list and one node from list 2
-    """
+
     actual_output1 =linked_list_ob.zipLists(linked_list_ob2).to_string()
     expected_output1=" {0} -> {1} -> {3} -> {2} -> {2} -> {3} -> {1} -> {0} -> NULL"
     assert actual_output1== expected_output1
     linked_list_ob2.insert(5)
-    actual_output2 =linked_list_ob.zipLists(linked_list_ob2)
-    expected_output2="Sorry invalid input"
+    actual_output2 =linked_list_ob.zipLists(linked_list_ob2).to_string()
+    expected_output2=" {0} -> {5} -> {3} -> {1} -> {2} -> {2} -> {1} -> {3} -> {0} -> NULL"
     assert actual_output2== expected_output2
 
 
