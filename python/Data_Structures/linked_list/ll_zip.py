@@ -1,6 +1,4 @@
-from ....python.Data_Structures.linked_list.linked_list  import *
-
-
+from linked_list import *
 
 def zipLists(ll1, ll2):
     """

@@ -1,5 +1,5 @@
-from Data_Structures.linked_list.linked_list import *
-from Data_Structures.linked_list import *
+from data_structures.linked_list.linked_list import *
+from data_structures.linked_list import *
 import pytest
 def test_instance():
     linked_list_ob = Linkedlist()
@@ -74,9 +74,6 @@ def test_zipLists(linked_list_ob,linked_list_ob2):
     expected_output2=" {0} -> {5} -> {3} -> {1} -> {2} -> {2} -> {1} -> {3} -> {0} -> NULL"
     assert actual_output2== expected_output2
 
-
-    print(actual_output1)
-    # print()
 
 
 @pytest.fixture
