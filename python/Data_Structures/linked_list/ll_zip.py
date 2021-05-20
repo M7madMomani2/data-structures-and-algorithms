@@ -1,4 +1,4 @@
-from .linked_list import *
+from linked_list import *
 
 def zipLists(ll1, ll2):
     """
