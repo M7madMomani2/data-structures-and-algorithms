@@ -27,7 +27,3 @@ Linked-List Class is the main class it has 3 main methods:
 
 ## Solution
 [Singly Linked List](https://miro.com/app/board/o9J_lG44R2c=/)
-
-[LL-Zip](https://miro.com/app/board/o9J_lG44R2c=/)
-
-
