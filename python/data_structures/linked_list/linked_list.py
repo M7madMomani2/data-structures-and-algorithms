@@ -123,11 +123,11 @@ class Linkedlist:
         if self.length or ll2.length:
             for i in range(max_len):
                 if ll1_curent:
-                    print(ll1_curent)
+                    # print(ll1_curent)
                     new_ll.append(ll1_curent.value)
                     ll1_curent=ll1_curent.next
                 if ll2_curent:
-                    print(ll2_curent)
+                    # print(ll2_curent)
                     new_ll.append(ll2_curent.value)
                     ll2_curent=ll2_curent.next
             print(new_ll.to_string())
