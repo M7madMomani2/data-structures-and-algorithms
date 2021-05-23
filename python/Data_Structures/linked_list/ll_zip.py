@@ -1,4 +1,4 @@
-from Data_Structures.linked_list.linked_list  import *
+from linked_list  import *
 
 
 
