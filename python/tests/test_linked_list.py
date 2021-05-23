@@ -1,5 +1,5 @@
-from Data_Structures.linked_list.linked_list import *
-from Data_Structures.linked_list import *
+from data_structures.linked_list.linked_list import *
+from data_structures.linked_list import *
 import pytest
 def test_instance():
     linked_list_ob = Linkedlist()

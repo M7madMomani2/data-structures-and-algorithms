@@ -1,6 +1,6 @@
 import pytest
-from Data_Structures.linked_list.ll_zip import *
-from Data_Structures.linked_list.linked_list import *
+from data_structures.linked_list.ll_zip import *
+from data_structures.linked_list.linked_list import *
 
 def test_zipLists(linked_list_ob,linked_list_ob2):
 

@@ -1,4 +1,4 @@
-from Data_Structures.stacks_and_queues.stacks_and_queues import *
+from data_structures.stacks_and_queues.stacks_and_queues import *
 import pytest
 
 def test_push(stack_op):
