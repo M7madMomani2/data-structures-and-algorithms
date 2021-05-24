@@ -37,7 +37,7 @@ class Stack:
     def isEmpty(self):
         if self.top:
             return False
-        elif not self.top:
+        else:
             return True
 
 
@@ -92,7 +92,7 @@ class Queue:
     def isEmpty(self):
         if self.front:
             return False
-        elif not self.front:
+        else :
             return True
 
 
@@ -106,6 +106,51 @@ class Queue:
 
         return f"{ current_string } -> NULL"
 
+class PseudoQueue :
+    def __init__(self):
+        self.front = Stack()
+        self.rear = Stack()
+
+    def enqueue(self,value):
+        self.front.push(value)
+
+
+    def dequeue(self):
+        try:
+            if self.isEmpty():
+                raise Exception('Empty Queue')
+            else:
+                temp = self.front
+                self.front = self.front.top
+                return temp.top
+        except:
+            return 'Empty Queue'
+
+    def peek(self):
+        try:
+            if self.isEmpty():
+                raise Exception('Empty Queue')
+            else:
+                return self.front.peek()
+        except:
+            return 'Empty Queue'
+
+    def isEmpty(self):
+        if self.front:
+            return False
+        elif not self.front:
+            return True
+
+
+    def to_string(self):
+        current = self.front
+        current_string = f" { {current.value} }"
+
+        while current.next:
+            current = current.next
+            current_string += f" -> { {current.value} }"
+
+        return f"{ current_string } -> NULL"
 
 stack1 = Stack()
 stack1.push(2)
