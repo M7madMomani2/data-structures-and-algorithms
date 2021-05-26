@@ -9,7 +9,12 @@ Big O :
 
 
 **Approach**
-> - to implement this data structure i used tow classes first ont Node and second one Linked-List class to connect nodes together
 
+create multi  method that take string
+
+create empty array and an dictionary with this details keys value=> { '(':')', '[':']', '{':'}' }
+
+using a for loop if the number equal one of keys_value then append it to the empty array or pop the array and return a false
+if length of the array not equal to zero return a false else: return True
 ## Solution
 [Singly Linked List](https://miro.com/app/board/o9J_lG44R2c=/)
