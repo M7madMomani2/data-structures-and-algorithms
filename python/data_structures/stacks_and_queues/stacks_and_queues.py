@@ -106,74 +106,26 @@ class Queue:
 
         return f"{ current_string } -> NULL"
 
-class PseudoQueue :
+class PseudoQueue():
     def __init__(self):
         self.front = Stack()
-        self.rear = Stack()
+        self.back = Stack()
 
-    def enqueue(self,value):
-        self.front.push(value)
-
+    def enqueue(self, value):
+        return self.front.push(value)
 
     def dequeue(self):
-        try:
-            if self.isEmpty():
-                raise Exception('Empty Queue')
-            else:
-                temp = self.front
-                self.front = self.front.top
-                return temp.top
-        except:
-            return 'Empty Queue'
-
-    def peek(self):
-        try:
-            if self.isEmpty():
-                raise Exception('Empty Queue')
-            else:
-                return self.front.peek()
-        except:
-            return 'Empty Queue'
-
-    def isEmpty(self):
-        if self.front:
-            return False
-        elif not self.front:
-            return True
-
-
-    def to_string(self):
-        current = self.front
-        current_string = f" { {current.value} }"
-
-        while current.next:
-            current = current.next
-            current_string += f" -> { {current.value} }"
-
-        return f"{ current_string } -> NULL"
-
-stack1 = Stack()
-stack1.push(2)
-stack1.push(1)
-stack1.push(0)
-stack1.push(4)
-stack1.push(6)
-stack1.push(8)
-print(stack1.to_string())
-stack1.pop()
-print(stack1.to_string())
-print(stack1.peek())
+        return self.front.pop()
 
 
 
-queue1 = Queue()
-queue1.enqueue(2)
-queue1.enqueue(1)
-queue1.enqueue(0)
-queue1.enqueue(4)
-queue1.enqueue(6)
-queue1.enqueue(8)
-print(queue1.to_string())
-queue1.dequeue()
-print(queue1.to_string())
-print(queue1.peek())
+if __name__ == "__main__":
+    pseudo = PseudoQueue()
+    pseudo.enqueue(1)
+    pseudo.enqueue(2)
+    pseudo.enqueue(3)
+    pseudo.enqueue(4)
+    print('peeked: ', pseudo.front.top.value)
+    print('value popped: ', pseudo.dequeue())
+
+
