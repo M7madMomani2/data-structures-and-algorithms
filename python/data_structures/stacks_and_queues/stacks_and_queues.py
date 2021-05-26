@@ -107,26 +107,29 @@ class Queue:
         return f"{ current_string } -> NULL"
 
 class PseudoQueue:
-  def __init__(self, node = None):
-    self.rear = Stack()
-    self.front = Stack()
+    def __init__(self, node = None):
+        self.front = Stack()
+        self.rear = Stack()
 
-  def enqueue(self, data):
-      self.rear.push(data)
+    def enqueue(self, data):
+        self.rear.push(data)
 
+    def isEmpty(self):
+        return self.rear.isEmpty()
 
-  def dequeue(self):
-    if self.rear.isEmpty():
-        raise Exception('Empty Stack')
-    else:
-        while not self.rear.isEmpty():
-            popped = self.rear.pop()
-            self.front.push(popped)
-        target = self.front.pop()
-        if self.rear.isEmpty():
-            while not self.front.isEmpty():
-                    self.rear.push(self.front.pop())
-        return target
+    def dequeue(self):
+        if self.isEmpty():
+            raise Exception('Empty PseudoQueue')
+        else:
+            while not self.rear.isEmpty():
+                popped = self.rear.pop()
+                self.front.push(popped)
+            target = self.front.pop()
+            if self.rear.isEmpty():
+                while not self.front.isEmpty():
+                        self.rear.push(self.front.pop())
+            return target
+
 
 
 
