@@ -26,3 +26,26 @@ Stacks Class is the main class it has 3 main methods:
 
 ## Solution
 [stacks_and_queues](https://miro.com/app/board/o9J_lDENR3k=/)
+
+
+
+===================================================================================
+# PseudoQueue
+> - we need to implement an queue using stack instead of node
+
+
+## Approach & Efficiency
+**Efficiency**
+
+Big O :
+> - O(1) Time/space performance for insert method.
+> - O(n^2) Time and O(1) space performance for includes method.
+
+
+**Approach**
+> - create method dequeue that return the first node of this kind
+
+> - create method inqueue() that take value after that put it in the rear of queue
+
+
+[PseudoQueue](https://miro.com/app/board/o9J_lDENR3k=/)
