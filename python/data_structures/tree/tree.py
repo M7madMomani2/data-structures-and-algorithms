@@ -1,5 +1,3 @@
-import pysnooper
-
 class Node:
   def __init__(self, value):
     self.value = value
@@ -17,7 +15,7 @@ class Stack:
         node.next = self.top
         self.top = node
 
-  # @pysnooper.snoop()
+
   def pop(self):
     if not self.is_empty():
       temp_node = self.top
@@ -71,9 +69,44 @@ class BinaryTree:
       if item.left is not None:
         stack.push(item.left)
 
-  def bread_first(self):
-     # Use queque for FIFO
-     pass
+
+class BinarySearchTree(BinaryTree):
+
+    def add(self, data):
+        if not self.root:
+            self.root = TNode(data)
+
+        else:
+            def walk(root):
+                if data < root.value:
+                    if not root.left:
+                        root.left = TNode(data)
+                        return
+                    else:
+                        walk(root.left)
+                else:
+                    if not root.right:
+                        root.right = TNode(data)
+                        return
+                    else:
+                        walk(root.right)
+            return walk(self.root)
+
+    def contains(self, data):
+        while self.root:
+            if self.root.data == data:
+                return True
+            elif self.root.data > data:
+                if self.root.left:
+                    self.root = self.root.left
+                else:
+                    return False
+            else:
+                if self.root.right:
+                    self.root = self.root.right
+                else:
+                    return False
+        return False
 
 
 if __name__ == "__main__":
@@ -87,14 +120,8 @@ if __name__ == "__main__":
   binary_tree = BinaryTree(node1)
 
   binary_tree.pre_order()
-  # binary_tree.pre_order_iter()
 
 
 
 
-# Think about
-class KNode:
-  def __init__(self, value=None):
-    self.value = value
-    # How could you implement this for k of any size?
-    self.children = []
+
