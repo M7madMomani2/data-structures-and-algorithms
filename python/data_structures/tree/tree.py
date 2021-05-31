@@ -68,7 +68,6 @@ class BinaryTree:
         _walk(self.root)
         return self.maxVal
 
-
     def breadth_first(self, tree):
         temp = []
         results = []
@@ -86,7 +85,7 @@ class BinaryTree:
                     temp.append(node.right)
             return results
         else:
-            return 'EMPTY'
+            return 'Empty'
 
 
 

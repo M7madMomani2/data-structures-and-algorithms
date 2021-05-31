@@ -19,5 +19,25 @@ Big O :
 ## Solution
 [Max of  Tree](https://miro.com/app/board/o9J_lG44R2c=/)
 
+-----------------------------------------
+# Breadth First
+> - we need to implement method that retun tree as Breadth First
 
+## Approach & Efficiency
+**Efficiency**
+
+Big O :
+> - O(n) Time and O(1) space performance for includes method.
+
+
+**Approach**
+- create method breadth_first()that take 2 argument (self and tree object )
+
+- create tow list temp and result
+
+- each level append nods to result until we pass node that don't have children's
+
+
+## Solution
+[Breadth First](https://miro.com/app/board/o9J_lG44R2c=/)
 
