@@ -7,6 +7,7 @@ class Node:
 class BinaryTree:
     def __init__(self):
         self.root = None
+        self.maxVal = 0
 
 
     def pre_order(self):
@@ -52,6 +53,21 @@ class BinaryTree:
 
         _walk(self.root)
         return output
+
+    def find_maximum_value(self, tree):
+
+        def _walk(node):
+            if self.maxVal < node.value:
+                self.maxVal = node.value
+
+            if node.left:
+                _walk(node.left)
+            if node.right:
+                _walk(node.right)
+
+        _walk(self.root)
+        return self.maxVal
+
 
     def breadth_first(self, tree):
         temp = []
