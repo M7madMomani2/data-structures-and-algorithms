@@ -19,15 +19,19 @@ def test_left_right_node(fixed_tree):
     assert fixed_tree.root.left.value == 5
     assert fixed_tree.root.right.value == 10
 
+# Can successfully show data in pre order
 def test_preOrder(fixed_tree_with_elements):
     assert fixed_tree_with_elements.pre_order() == [7, 5, 1, 9, 8, 11]
 
+# Can successfully show data in in_order
 def test_inOrder(fixed_tree_with_elements):
     assert fixed_tree_with_elements.in_order() == [1, 5, 7, 8, 9, 11]
 
+# Can successfully show data in post_order
 def test_postOrder(fixed_tree_with_elements):
     assert fixed_tree_with_elements.post_order() == [1, 5, 8, 11, 9, 7]
 
+# Can successfully return max of tree
 def test_max(fixed_tree_with_elements):
     assert fixed_tree_with_elements.find_maximum_value(fixed_tree_with_elements) == 11
 
