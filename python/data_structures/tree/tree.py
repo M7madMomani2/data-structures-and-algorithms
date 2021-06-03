@@ -248,7 +248,7 @@
 #             return 'Empty'
 
 
-# def FizzBuzzTree(tree):
+# def fizz_buzz_tree(tree):
 #     new_tree = tree
 #     if new_tree.root != None:
 
@@ -301,7 +301,7 @@
 
 #     # print(bst.sum_odd())
 #     print('breadth_first For BinarySearchTree',bst.breadth_first())
-#     print(FizzBuzzTree(bt).breadth_first(bt))
+#     print(fizz_buzz_tree(bt).breadth_first(bt))
 
 
 
@@ -488,7 +488,7 @@ class BinarySearchTree(BinaryTree):
             return False
 
 
-def FizzBuzzTree(tree):
+def fizz_buzz_tree(tree):
     new_tree = tree
     if new_tree.root != None:
 
@@ -523,4 +523,4 @@ if __name__ == "__main__":
     bt.root.left.left = Node(3)
     bt.root.left.right = Node(5)
     print(bt.find_maximum_value())
-    print(FizzBuzzTree(bt).breadth_first())
+    print(fizz_buzz_tree(bt).breadth_first())
