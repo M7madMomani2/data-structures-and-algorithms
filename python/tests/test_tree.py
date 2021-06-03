@@ -33,11 +33,11 @@ def test_postOrder(fixed_tree_with_elements):
 
 # Can successfully return max of tree
 def test_max(fixed_tree_with_elements):
-    assert fixed_tree_with_elements.find_maximum_value(fixed_tree_with_elements) == 11
+    assert fixed_tree_with_elements.find_maximum_value() == 11
 
 # Can successfully return breadth first tree
 def test_breadth_first(fixed_binary_tree):
-    assert fixed_binary_tree.breadth_first(fixed_binary_tree) == [6, 5, 3, 7, -1, 10]
+    assert fixed_binary_tree.breadth_first() == [6, -1, 5, 10, 7, 3]
 
 @pytest.fixture
 def fixed_tree():
