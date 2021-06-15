@@ -1,48 +1,34 @@
+def QuickSort(arr, left, right):
+    if left < right:
+        position = Partition(arr, left, right)
+        QuickSort(arr, left, position - 1)
+        QuickSort(arr, position + 1, right)
 
-def Mergesort(arr):
-    n = len(arr)
+def Partition(arr, left, right):
+    pivot = arr[right]
+    low = left - 1
+    for i in range (left , right):
+        if arr[i] <= pivot:
+            low += 1
+            Swap(arr, i, low)
 
-    if n > 1:
-        mid = n//2
-        left = arr[0:mid]
-        right = arr[mid:n]
-        Mergesort(left)
-        Mergesort(right)
-        Merge(left, right, arr)
+    Swap(arr, right, low + 1)
+    return low + 1
 
-def Merge(left, right, arr):
-    i = 0
-    j = 0
-    k = 0
-
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            arr[k] = left[i]
-            i += 1
-        else:
-            arr[k] = right[j]
-            j +=  1
-        k += 1
-
-    while i < len(left):
-        arr[k] = left[i]
-        i += 1
-        k += 1
-
-    while j < len(right):
-        arr[k] = right[j]
-        j += 1
-        k += 1
+def Swap(arr, i, low):
+    temp = arr[i]
+    arr[i] = arr[low]
+    arr[low] = temp
 
 
 temp = [8,4,23,42,16,15]
 Reverse_sorted= [20,18,12,8,5,-2]
 Few_uniques= [5,12,7,5,5,7]
 Nearly_sorted= [2,3,5,7,13,11]
-Mergesort(temp)
-Mergesort(Reverse_sorted)
-Mergesort(Few_uniques)
-Mergesort(Nearly_sorted)
+QuickSort(temp, 0 ,len(temp)-1)
+QuickSort(Reverse_sorted, 0 ,len(Reverse_sorted)-1)
+QuickSort(Few_uniques, 0 ,len(Few_uniques)-1)
+QuickSort(Nearly_sorted, 0 ,len(Nearly_sorted)-1)
 print(temp)
 print(Reverse_sorted)
 print(Few_uniques)
