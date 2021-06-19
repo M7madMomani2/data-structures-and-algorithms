@@ -71,6 +71,6 @@ class Hashtable:
         else:
             return False
 
-hash = Hashtable()
-hash.add('HI',30)
-print(hash.hash('HI'))
+hash_op = Hashtable()
+hash_op.add('HI',30)
+print(hash_op.hash('HI'))
