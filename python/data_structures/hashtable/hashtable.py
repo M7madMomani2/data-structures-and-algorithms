@@ -73,4 +73,4 @@ class Hashtable:
 
 hash_op = Hashtable()
 hash_op.add('HI',30)
-print(hash_op.hash('HI'))
+print(hash_op)
