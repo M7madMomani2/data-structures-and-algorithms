@@ -42,6 +42,29 @@ class  Graph:
     def size(self):
         return len(self.adjacency_list)
 
+    def bfs(self, start_node):
+        nodes=set([])
+        temp = [start_node]
+        values = []
+
+        while len(temp) >0:
+            front_node = temp.pop(0)
+            nodes.add(front_node)
+
+            for i in self.adjacency_list.keys():
+                if str(i.value) == str(front_node):
+                    values.append(self.adjacency_list[i])
+                    break
+
+            if len(values) > 0:
+                for n in values[0]:
+                    if n[1] not in nodes:
+                        temp.append(n[1])
+                        nodes.add(n[1])
+            else:
+                return False
+        return nodes
+
 
 graph = Graph()
 node1 = graph.add_node('1')
