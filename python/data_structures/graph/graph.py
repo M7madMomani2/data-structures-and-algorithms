@@ -42,6 +42,7 @@ class  Graph:
     def size(self):
         return len(self.adjacency_list)
 
+    #breadth first search
     def bfs(self, start_node):
         nodes=set([])
         temp = [start_node]
@@ -64,7 +65,6 @@ class  Graph:
             else:
                 return False
         return nodes
-
 
 graph = Graph()
 node1 = graph.add_node('1')
