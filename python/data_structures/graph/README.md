@@ -33,3 +33,23 @@ Include the weight of the connection in the returned collection
 **size():**
 Returns the total number of nodes in the graph
 
+# business trip
+we need to create function to calculate trip cost from tow city's in graph
+edge case :
+invalid input type
+
+## Approach & Efficiency
+create method called businessTrip and receive Tow argument graph, cityArray
+define total Cost with zero value
+
+for each  cityArray
+define neighbors array
+for each neighbors
+check if cityArray[pointer 1] is equal  neighbors[pointer 1]of vertex
+increase totalCost  with weight of neighbors
+return check and totalCost
+
+## bIG O
+TIME : O(n^2)
+space : O(n)
+![Insertion Sort](../../assets/business.jpg)

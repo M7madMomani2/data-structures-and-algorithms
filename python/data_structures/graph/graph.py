@@ -42,6 +42,47 @@ class  Graph:
     def size(self):
         return len(self.adjacency_list)
 
+    #breadth first search
+    def bfs(self, start_node):
+        nodes=set([])
+        temp = [start_node]
+        values = []
+
+        while len(temp) >0:
+            front_node = temp.pop(0)
+            nodes.add(front_node)
+
+            for i in self.adjacency_list.keys():
+                if str(i.value) == str(front_node):
+                    values.append(self.adjacency_list[i])
+                    break
+
+            if len(values) > 0:
+                for n in values[0]:
+                    if n[1] not in nodes:
+                        temp.append(n[1])
+                        nodes.add(n[1])
+            else:
+                return False
+        return nodes
+
+def businessTrip(graph, cityArray) :
+    totalCost = 0
+    check = False
+    for i in range(len(cityArray)-1):
+        neighbors = graph.get_neighbors(cityArray[i])
+        for j in range(len(neighbors)-1) :
+            if (cityArray[i + 1] == neighbors[j].vertex) :
+                totalCost += neighbors[j].weight
+                check = True
+
+    if (check == False) :
+        totalCost = 0
+        check = False
+        return f'{check}, {totalCost}'
+
+    return f'{check}, {totalCost}'
+
 
 graph = Graph()
 node1 = graph.add_node('1')
@@ -57,4 +98,5 @@ graph.add_edge(node2,node5)
 graph.add_edge(node6,node4)
 graph.add_edge(node3 ,node4)
 graph.add_edge(node4,node5)
+print (businessTrip(graph,[node1,node6 ]))
 print(graph.size())

@@ -53,7 +53,43 @@ def test_empty_graph():
     graph = Graph()
     actual = graph.get_nodes()
     assert not actual
+def test_business_trip():
+    graph = Graph()
+    node1 = graph.add_node('1')
+    node2 = graph.add_node('2')
+    node6 = graph.add_node('3')
+    node3 = graph.add_node('4')
+    node4 = graph.add_node('5')
+    node5 = graph.add_node('6')
+    graph.add_edge(node1,node6)
+    graph.add_edge(node1,node3)
+    graph.add_edge(node2,node6)
+    graph.add_edge(node2,node5)
+    graph.add_edge(node6,node4)
+    graph.add_edge(node3 ,node4)
+    graph.add_edge(node4,node5)
+    actual= (businessTrip(graph,[node1,node6 ]))
+    assert  actual=="True, 0"
 
+@pytest.fixture
+def graph_test():
+    test1 = Graph()
+    test1.add_node('a')
+    test1.add_node('b')
+    test1.add_node('c')
+    test1.add_node('d')
+    test1.add_node('x')
+    test1.add_edge('a','b',4)
+    test1.add_edge('a','d',9)
+    test1.add_edge('a','c',3)
+    test1.add_edge('b','a',4)
+    test1.add_edge('c','a',3)
+    test1.add_edge('c','d',6)
+    test1.add_edge('d','a',9)
+    test1.add_edge('d','b',5)
+    test1.add_edge('d','c',6)
+
+    return test1
 @pytest.fixture
 def graph():
     graph = Graph()
