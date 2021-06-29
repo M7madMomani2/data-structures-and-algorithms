@@ -52,4 +52,9 @@ return check and totalCost
 ## bIG O
 TIME : O(n^2)
 space : O(n)
-![Insertion Sort](../../assets/business.jpg)
+
+
+![business](../../assets/business.jpg)
+
+
+![bfs](../../assets/bfs.jpg)
