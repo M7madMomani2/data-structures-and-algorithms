@@ -69,9 +69,9 @@ class  Graph:
 def businessTrip(graph, cityArray) :
     totalCost = 0
     check = False
-    for i in range(len(cityArray) - 1):
-        neighbors = graph.getNeighbors(cityArray[i])
-        for j in range(len(neighbors)- 1) :
+    for i in range(len(cityArray)-1):
+        neighbors = graph.get_neighbors(cityArray[i])
+        for j in range(len(neighbors)-1) :
             if (cityArray[i + 1] == neighbors[j].vertex) :
                 totalCost += neighbors[j].weight
                 check = True
@@ -98,5 +98,5 @@ graph.add_edge(node2,node5)
 graph.add_edge(node6,node4)
 graph.add_edge(node3 ,node4)
 graph.add_edge(node4,node5)
-businessTrip(graph,['amman' , 'irbid'])
+print (businessTrip(graph,[node1,node6 ]))
 print(graph.size())

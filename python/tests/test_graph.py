@@ -53,11 +53,23 @@ def test_empty_graph():
     graph = Graph()
     actual = graph.get_nodes()
     assert not actual
-
-def test_depth_first_graph_1(graph_test):
-    actual = graph_test.bfs('a')
-    expect = ['a', 'c', 'd', 'b']
-    assert expect == actual
+def test_business_trip():
+    graph = Graph()
+    node1 = graph.add_node('1')
+    node2 = graph.add_node('2')
+    node6 = graph.add_node('3')
+    node3 = graph.add_node('4')
+    node4 = graph.add_node('5')
+    node5 = graph.add_node('6')
+    graph.add_edge(node1,node6)
+    graph.add_edge(node1,node3)
+    graph.add_edge(node2,node6)
+    graph.add_edge(node2,node5)
+    graph.add_edge(node6,node4)
+    graph.add_edge(node3 ,node4)
+    graph.add_edge(node4,node5)
+    actual= (businessTrip(graph,[node1,node6 ]))
+    assert  actual=="True, 0"
 
 @pytest.fixture
 def graph_test():
