@@ -105,20 +105,20 @@ class  Graph:
     def depth_first(self):
         nodes = self.get_nodes()
         root = None
-        for node in nodes:
-            root = node
+        for i in nodes:
+            root = i
             break
         result = []
-        def inner_func(root,result):
+        def walk(root,result):
             if root not in result:
                 result.append(root)
             neighbors = self.get_neighbors(root)
             for edge in neighbors:
                 if edge.vertex not in result:
                     result.append(edge.vertex)
-                    inner_func(edge.vertex,result)
+                    walk(edge.vertex,result)
         if root:
-            inner_func(root,result)
+            walk(root,result)
         return result
 
 def businessTrip(graph, cityArray) :
