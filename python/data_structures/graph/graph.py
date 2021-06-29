@@ -1,3 +1,5 @@
+from collections import deque
+
 class Vertex:
 
     def __init__(self,value):
@@ -11,6 +13,20 @@ class Edge:
     def __init__(self,vertex,weight):
         self.vertex = vertex
         self.weight = weight
+
+class Queue():
+
+    def __init__(self):
+        self.dq = deque()
+
+    def enqueue(self, value):
+        self.dq.appendleft(value)
+
+    def dequeue(self):
+        return self.dq.pop()
+
+    def __len__(self):
+        return len(self.dq)
 
 class  Graph:
 
@@ -42,6 +58,26 @@ class  Graph:
     def size(self):
         return len(self.adjacency_list)
 
+    def breadth_first(self,node):
+        queue = Queue()
+        queue.enqueue(node)
+        visited  = set()
+        visited.add(node)
+        node_list = []
+        def inner_func(queue,visited,node_list):
+            for index in range(len(queue)):
+                node = queue.dequeue()
+                node_list.append(node)
+                neighbors = self.get_neighbors(node)
+                for edge in neighbors:
+                    if edge.vertex not in visited:
+                        queue.enqueue(edge.vertex)
+                        visited.add(edge.vertex)
+            if len(queue) > 0:
+                inner_func(queue,visited,node_list)
+        inner_func(queue,visited,node_list)
+        return node_list
+
     #breadth first search
     def bfs(self, start_node):
         nodes=set([])
@@ -66,6 +102,25 @@ class  Graph:
                 return False
         return nodes
 
+    def depth_first(self):
+        nodes = self.get_nodes()
+        root = None
+        for i in nodes:
+            root = i
+            break
+        result = []
+        def walk(root,result):
+            if root not in result:
+                result.append(root)
+            neighbors = self.get_neighbors(root)
+            for edge in neighbors:
+                if edge.vertex not in result:
+                    result.append(edge.vertex)
+                    walk(edge.vertex,result)
+        if root:
+            walk(root,result)
+        return result
+
 def businessTrip(graph, cityArray) :
     totalCost = 0
     check = False
@@ -83,20 +138,23 @@ def businessTrip(graph, cityArray) :
 
     return f'{check}, {totalCost}'
 
-
 graph = Graph()
-node1 = graph.add_node('1')
-node2 = graph.add_node('2')
-node6 = graph.add_node('3')
-node3 = graph.add_node('4')
-node4 = graph.add_node('5')
-node5 = graph.add_node('6')
-graph.add_edge(node1,node6)
-graph.add_edge(node1,node3)
-graph.add_edge(node2,node6)
-graph.add_edge(node2,node5)
-graph.add_edge(node6,node4)
-graph.add_edge(node3 ,node4)
+node1 = graph.add_node('a')
+node2 = graph.add_node('b')
+node3 = graph.add_node('c')
+node4 = graph.add_node('d')
+node5 = graph.add_node('e')
+node6 = graph.add_node('f')
+node7 = graph.add_node('g')
+node8 = graph.add_node('h')
+graph.add_edge(node1,node2)
+graph.add_edge(node1,node4)
+graph.add_edge(node2,node3)
+graph.add_edge(node2,node4)
+graph.add_edge(node3,node7)
 graph.add_edge(node4,node5)
-print (businessTrip(graph,[node1,node6 ]))
-print(graph.size())
+graph.add_edge(node4,node8)
+graph.add_edge(node4,node6)
+graph.add_edge(node8,node6)
+for node in graph.depth_first():
+    print(node.value)
